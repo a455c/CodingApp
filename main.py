@@ -40,36 +40,37 @@ def switch(w): # acts as a switch statement
         print('exception')
 
 
+if len(sys.argv) == 3:
 
-easycodelst = [] # creates a list for the easycode sentences
-with open('easycodefile.txt', 'r') as file: # opens text file as variable 'file'
-    for sentence in file: # for sentence in file
-        easycodelst.append(sentence) # add the sentence to the list
+    easycodelst = [] # creates a list for the easycode sentences
+    with open(sys.argv[1], 'r') as file: # opens text file as variable 'file'
+        for sentence in file: # for sentence in file
+            easycodelst.append(sentence) # add the sentence to the list
 
-pylist = []
+    pylist = []
 
-for sentence in easycodelst:
-    if not sentence:# if there is no sentence, continue
-        continue
-
-    split = sentence.split() # split the sentences into singular word
-
-    for word in split: # for each word in the wordlist
-        word = switch(word) # use the switch function to get the python syntax
-        print(str(word) + ' ') # print the syntax
-
-        pylist.append(word)
-
-    print('\n') # start a new line for every new sentence
-    pylist.append('_')
-
-
-with open('pythonfile.py', 'w') as f:
-    for word in pylist:
-        if word == '_':
-            f.write('\n')
+    for sentence in easycodelst:
+        if not sentence:# if there is no sentence, continue
             continue
 
-        
-        f.write(word + ' ')
+        split = sentence.split() # split the sentences into singular word
+
+        for word in split: # for each word in the wordlist
+            word = switch(word) # use the switch function to get the python syntax
+            print(str(word) + ' ') # print the syntax
+
+            pylist.append(word)
+
+        print('\n') # start a new line for every new sentence
+        pylist.append('_')
+
+
+    with open(sys.argv[2], 'w') as f:
+        for word in pylist:
+            if word == '_':
+                f.write('\n')
+                continue
+
+
+            f.write(word + ' ')
 
