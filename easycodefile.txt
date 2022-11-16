@@ -1,0 +1,16 @@
+cheese equals 5
+if cheese less than 6 do 
+cheese equals 10
+else do
+cheese equals 45
+
+while cheese isn't 45 do
+cheese equals cheese plus 1
+cheese equals cheese times by 3
+cheese equals cheese divided by 10
+
+if cheese isn't 56 do
+cheese equals 1
+
+while cheese is 1 do
+32 divided by 4
