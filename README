@@ -1,0 +1,7 @@
+this is just a small project
+this is not a full release so dont be mad at how bad it is :)
+
+anyway --
+in a terminal the syntax should be:
+
+python ./main.py inputfile.txt outputfile.py
